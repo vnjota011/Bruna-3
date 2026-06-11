@@ -1,0 +1,76 @@
+:root {
+  --crimson:   #c2185b;
+  --rose:      #e91e63;
+  --blush:     #f8bbd0;
+  --night:     #0d0a0f;
+  --dusk:      #180f20;
+  --deep:      #1f0f2e;
+  --glass:     rgba(255, 255, 255, 0.05);
+  --glassborder: rgba(255, 255, 255, 0.10);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background: var(--night);
+}
+
+/* ── Typography helpers ── */
+.fd { font-family: 'Cormorant Garamond', serif; }
+.fb { font-family: 'DM Sans', sans-serif; }
+
+/* ── Gradient text helpers ── */
+.tg {
+  background: linear-gradient(135deg, #f8bbd0 0%, #ffffff 45%, #f48fb1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tgr {
+  background: linear-gradient(135deg, #f48fb1, #e91e63, #c2185b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glass card ── */
+.card-dark {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* ── Animations ── */
+@keyframes pglow {
+  0%, 100% { box-shadow: 0 0 18px rgba(233, 30, 99, 0.35); }
+  50%       { box-shadow: 0 0 38px rgba(233, 30, 99, 0.75); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+.shimmer-bar {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.14), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s infinite;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: var(--night); }
+::-webkit-scrollbar-thumb { background: var(--crimson); border-radius: 2px; }
