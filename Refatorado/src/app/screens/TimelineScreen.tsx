@@ -130,9 +130,12 @@ export function TimelineScreen({ onContinue }: TimelineScreenProps) {
       {/* imagens e modal removidos — agora as cartas exibem título e história diretamente */}
 
       <style>{`
+        .tl-line { display: none !important; }
+        .tl-dot  { display: none !important; }
+
         @media(min-width:768px){
-          .tl-line { display:block !important; }
-          .tl-dot  { display:block !important; }
+          .tl-line { display: block !important; }
+          .tl-dot  { display: grid !important; }
         }
       `}</style>
     </motion.div>
